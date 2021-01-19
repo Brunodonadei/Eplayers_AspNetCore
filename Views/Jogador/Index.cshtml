@@ -1,6 +1,6 @@
 @model Jogador
 @{
-    ViewData["Title"] = "Jogador";
+    ViewData["Title"] = "Jogadores";
 }
 
 (Equipe equipe = new Equipe());
@@ -12,8 +12,9 @@
 <form action='@Url.Action("Cadastrar")' class="cadastro" method="POST">
 
     <div class="campo">
-        <label>Selecione sua equipe</label>
-        <select name="IdEquipe">
+        <label>ID Equipe</label>
+        <select name="IdEquipe" id="IdEquipe">
+            <option value="0">Selecione uma opção abaixo:</option>
             @foreach (Equipe equipe in ViewBag.outraEquipe)
             {
                 <option value="@equipe.IdEquipe"> @equipe.Nome</option>
@@ -44,7 +45,6 @@
         <th>Equipe</th>
         <th>Nome</th>
         <th>Email</th>
-        <th>Senha</th>
     </thead>
     <tbody>
         @foreach (Jogador jogador in ViewBag.Jogadores)
@@ -53,9 +53,8 @@
                 <td>@jogador.IdEquipe</td>
                 <td>@jogador.Nome</td>
                 <td>@jogador.Email</td>
-                <td>@jogador.Senha</td>
                 <td><a asp-area="Link para excluir um jogador" asp-controller="Jogador" asp-action="Excluir"
-                asp-route-id="@jogador.IdEquipe">Excluir</a></td>
+                        asp-route-id="@jogador.IdJogador">Excluir</a></td>
             </tr>
         }
     </tbody>

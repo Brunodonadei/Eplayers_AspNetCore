@@ -18,6 +18,7 @@ namespace Eplayers_AspNetCore.Controllers
 
             Equipe outraEquipe = new Equipe();
             ViewBag.outraEquipe = outraEquipe.ReadAll();
+
             return View();
         }
 
@@ -27,7 +28,7 @@ namespace Eplayers_AspNetCore.Controllers
             Jogador novoJogador = new Jogador();
             novoJogador.IdEquipe = Int32.Parse(form["IdEquipe"]);
             novoJogador.Nome      = form["Nome"];
-            novoJogador.Email     = form["Senha"];
+            novoJogador.Email     = form["Email"];
             novoJogador.Senha     = form["Senha"];
 
             jogadorModel.Create(novoJogador);
