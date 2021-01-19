@@ -8,6 +8,8 @@ namespace Eplayers_AspNetCore.Models
     {
         public int IdJogador { get; set; }
         public string Nome { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
         public int IdEquipe { get; set; }
         private const string PATH = "Database/Jogador.csv";
 
@@ -18,7 +20,7 @@ namespace Eplayers_AspNetCore.Models
 
         public string Prepare(Jogador j)
         {
-            return $"{j.IdJogador};{j.Nome};{j.IdEquipe}";
+            return $"{j.IdJogador};{j.Nome};{j.Email};{j.Senha};{j.IdEquipe}";
         }
 
         public void Create(Jogador j)
@@ -39,7 +41,9 @@ namespace Eplayers_AspNetCore.Models
                 Jogador jogador = new Jogador();
                 jogador.IdJogador = int.Parse(linha[0]);
                 jogador.Nome = linha[1];
-                jogador.IdEquipe = int.Parse(linha[2]);
+                jogador.Email = linha[2];
+                jogador.Senha = linha[3];
+                jogador.IdEquipe = int.Parse(linha[4]);
 
                 jogadores.Add(jogador);
             }

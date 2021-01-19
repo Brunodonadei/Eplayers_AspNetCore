@@ -1,0 +1,62 @@
+@model Jogador
+@{
+    ViewData["Title"] = "Jogador";
+}
+
+(Equipe equipe = new Equipe());
+
+<div class="titulo_pagina">
+    <h1>Cadastro de @ViewData["Title"]</h1>
+</div>
+
+<form action='@Url.Action("Cadastrar")' class="cadastro" method="POST">
+
+    <div class="campo">
+        <label>Selecione sua equipe</label>
+        <select name="IdEquipe">
+            @foreach (Equipe equipe in ViewBag.outraEquipe)
+            {
+                <option value="@equipe.IdEquipe"> @equipe.Nome</option>
+            }
+        </select>
+    </div>
+
+    <div class="campo">
+        <label>Nome</label>
+        <input type="text" name="Nome">
+    </div>
+
+    <div class="campo">
+        <label>Email</label>
+        <input type="email" name="Email">
+    </div>
+
+    <div class="campo">
+        <label>Senha</label>
+        <input type="password" name="Senha">
+    </div>
+
+    <button class="gradient btn" type="submit">Cadastrar</button>
+</form>
+
+<table class="table table-striped table-responsive">
+    <thead>
+        <th>Equipe</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Senha</th>
+    </thead>
+    <tbody>
+        @foreach (Jogador jogador in ViewBag.Jogadores)
+        {
+            <tr>
+                <td>@jogador.IdEquipe</td>
+                <td>@jogador.Nome</td>
+                <td>@jogador.Email</td>
+                <td>@jogador.Senha</td>
+                <td><a asp-area="Link para excluir um jogador" asp-controller="Jogador" asp-action="Excluir"
+                asp-route-id="@jogador.IdEquipe">Excluir</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
