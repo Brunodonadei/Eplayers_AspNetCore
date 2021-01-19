@@ -62,11 +62,11 @@ namespace Eplayers_AspNetCore.Models
             RewriteCSV(PATH, linhas);
         }
 
-        public void Delete(int id)
+        public void Delete(int idJ)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
 
-            linhas.RemoveAll(x => x.Split(";")[0] == id.ToString());
+            linhas.RemoveAll(x => x.Split(";")[0] == idJ.ToString());
 
             RewriteCSV(PATH, linhas);
         }

@@ -14427,6 +14427,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Pichau\\OneDrive\\Desktop\\Eplayers_AspNetCore\\Views\\Login\\Index.cshtml",
+      "TargetPath": "Views\\Login\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Pichau\\OneDrive\\Desktop\\Eplayers_AspNetCore\\Views\\Noticia\\Index.cshtml",
+      "TargetPath": "Views\\Noticia\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Pichau\\OneDrive\\Desktop\\Eplayers_AspNetCore\\Views\\Jogador\\Index.cshtml",
       "TargetPath": "Views\\Jogador\\Index.cshtml",
       "FileKind": "mvc"
